@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-cache search linux-headers-generic
 
 COPY requirements.txt requirements.txt
-
+COPY main.py main.py
 RUN pip install --upgrade pip setuptools six && pip install --no-cache-dir -r requirements.txt
 
 # create action working directory
@@ -30,3 +30,4 @@ RUN mkdir -p /pythonAction
 ADD https://raw.githubusercontent.com/apache/incubator-openwhisk-runtime-python/3%401.0.3/core/pythonAction/pythonrunner.py /pythonAction/pythonrunner.py
 
 CMD ["/bin/bash", "-c", "cd /pythonAction && python -u pythonrunner.py"]
+CMD ["/bin/bash", "-c", "cd && python -u main.py"]
