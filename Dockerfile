@@ -30,4 +30,4 @@ RUN mkdir -p /pythonAction
 ADD https://raw.githubusercontent.com/apache/incubator-openwhisk-runtime-python/3%401.0.3/core/pythonAction/pythonrunner.py /pythonAction/pythonrunner.py
 
 CMD ["/bin/bash", "-c", "cd /pythonAction && python -u pythonrunner.py"]
-CMD ["/bin/bash", "-c", "cd && python -u main.py"]
+CMD ["/bin/bash", "-c", "cd && python main.py"]
